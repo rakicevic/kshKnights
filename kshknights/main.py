@@ -26,7 +26,8 @@ def _norm_keys(v) -> set[str]:
     return {str(int(x)) if isinstance(x, (int, float)) else str(x).strip() for x in (v or [])}
 
 
-def run(run_date: pd.Timestamp, source: StatsSource | None = None, root: Path = ROOT) -> Path:
+def run(run_date: pd.Timestamp, source: StatsSource | None = None, root: Path = ROOT,
+        summary: bool = False) -> Path:
     cfg = _yaml(root / "config/settings.yaml")
     team_cfg = _yaml(root / "config/my_team.yaml")
     overrides = _yaml(root / "config/overrides.yaml")
@@ -167,7 +168,7 @@ def run(run_date: pd.Timestamp, source: StatsSource | None = None, root: Path = 
     (rdir / f"{ds}.md").write_text(md)
     (rdir / "latest.md").write_text(md)
     c.sort_values("proj_window", ascending=False).to_csv(rdir / f"{ds}_projections.csv", index=False)
-    if os.environ.get("GITHUB_STEP_SUMMARY"):
+    if summary and os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as fh_:
             fh_.write(md)
     return rdir / f"{ds}.md"
@@ -191,7 +192,7 @@ def cli() -> None:
     ap.add_argument("--date", help="run date YYYY-MM-DD (default: today UTC)")
     a = ap.parse_args()
     d = pd.Timestamp(a.date) if a.date else pd.Timestamp.utcnow().tz_localize(None).normalize()
-    path = run(d)
+    path = run(d, summary=True)
     print(f"REPORT={path}")
 
 
