@@ -45,7 +45,8 @@ def run(run_date: pd.Timestamp, source: StatsSource | None = None, root: Path = 
     fan["season_price_change"] = fan["key"].map(trend)
 
     # ---- box scores
-    src = source or StatsSource(cfg["competition"], root / "data/cache", cfg.get("request_pause_seconds", 0.4))
+    src = source or StatsSource(cfg["competition"], root / "data/cache", cfg.get("request_pause_seconds", 0.4),
+                                cfg.get("max_fetch_seconds", 1500))
     box = pd.concat([src.boxscores(prior), src.boxscores(season)], ignore_index=True)
     if box.empty:
         raise SystemExit("No box score data available (API unreachable and cache empty).")
