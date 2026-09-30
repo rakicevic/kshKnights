@@ -29,8 +29,9 @@ def _first_col(df: pd.DataFrame, candidates: list[str]) -> str | None:
 
 class StatsSource:
     def __init__(self, competition: str = "E", cache_dir: str | Path = "data/cache",
-                 pause: float = 0.4):
+                 pause: float = 0.4, max_fetch_seconds: float = 1500):
         self.competition = competition
+        self.max_fetch_seconds = max_fetch_seconds
         self.cache_dir = Path(cache_dir)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.pause = pause
@@ -85,22 +86,38 @@ class StatsSource:
             return self._normalize(cached)
 
         missing = games[~games["Gamecode"].isin(have)]
-        new_parts = []
-        for _, g in missing.iterrows():
+        total = len(missing)
+        log.info("Season %s: %d games played, %d cached, %d to download", season, len(games), len(have), total)
+        new_parts, failed, t0 = [], 0, time.time()
+
+        def flush():
+            nonlocal cached, new_parts
+            if new_parts:
+                cached = pd.concat([cached] + new_parts, ignore_index=True)
+                cached.to_csv(path, index=False, compression="gzip")
+                new_parts = []
+
+        for i, (_, g) in enumerate(missing.iterrows(), 1):
+            if time.time() - t0 > self.max_fetch_seconds:
+                log.warning("Season %s: time budget reached after %d/%d games; rest next run", season, i - 1, total)
+                break
             try:
                 bx = self._boxscore(season, int(g["Gamecode"]))
+                bx["Round"] = g["Round"]
+                bx["Date"] = g["Date"]
+                new_parts.append(bx[[c for c in BOX_COLS if c in bx.columns] + ["Round", "Date"]])
             except Exception as exc:
+                failed += 1
                 log.warning("Box score %s/%s failed: %s", season, g["Gamecode"], exc)
-                continue
-            bx["Round"] = g["Round"]
-            bx["Date"] = g["Date"]
-            new_parts.append(bx[[c for c in BOX_COLS if c in bx.columns] + ["Round", "Date"]])
+                if failed >= 10 and failed == i:
+                    log.error("Season %s: first %d requests all failed; API unreachable, using cache", season, failed)
+                    break
+            if i % 10 == 0 or i == total:
+                log.info("Season %s: %d/%d games (%.0fs elapsed)", season, i, total, time.time() - t0)
+            if i % 25 == 0:
+                flush()  # keep progress even if the job is killed
             time.sleep(self.pause)
-
-        if new_parts:
-            cached = pd.concat([cached] + new_parts, ignore_index=True)
-            cached.to_csv(path, index=False, compression="gzip")
-            log.info("Season %s: fetched %d new games", season, len(new_parts))
+        flush()
         return self._normalize(cached)
 
     @staticmethod
