@@ -25,7 +25,9 @@ concurrency:
 jobs:
   report:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
+    env:
+      PYTHONUNBUFFERED: "1"
     steps:
       - uses: actions/checkout@v4
 
@@ -44,22 +46,37 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
+          set -o pipefail
           ARGS=""
           if [ -n "${{ github.event.inputs.date }}" ]; then ARGS="--date ${{ github.event.inputs.date }}"; fi
-          python -m kshknights $ARGS | tee run.log
+          python -u -m kshknights $ARGS 2>&1 | tee run.log
           echo "report=$(grep '^REPORT=' run.log | cut -d= -f2)" >> "$GITHUB_OUTPUT"
 
       - name: Commit report, cache and price history
+        if: always()             # keep downloaded box scores even if the report step failed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add reports data/cache data/history
-          git diff --cached --quiet || git commit -m "Weekly report $(date -u +%F)"
-          git pull --rebase --autostash
-          git push
+          # Generated files only: this run's versions win over anything pushed meanwhile.
+          tmp=$(mktemp -d)
+          mkdir -p reports data/cache data/history
+          cp -r reports "$tmp/reports"; cp -r data/cache "$tmp/cache"; cp -r data/history "$tmp/history"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp -r "$tmp/reports/." reports/
+            cp -r "$tmp/cache/." data/cache/
+            cp -r "$tmp/history/." data/history/
+            git add reports data/cache data/history
+            if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
+            git commit -m "Weekly report $(date -u +%F)"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Push rejected, retrying ($attempt)"; sleep 5
+          done
+          exit 1
 
       - name: Open issue with the report (GitHub emails you)
-        if: github.event_name != 'push'
+        if: success() && github.event_name != 'push'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
