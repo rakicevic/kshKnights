@@ -46,3 +46,4 @@ ai_news:
   candidates: 30           # players checked for injury/availability news
 
 request_pause_seconds: 0.4 # politeness delay between EuroLeague API calls
+max_fetch_seconds: 1500    # per season per run; unfinished downloads continue next run
