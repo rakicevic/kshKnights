@@ -1,0 +1,15 @@
+# Your current fantasy squad. Update after every trade window.
+# Leave `players` empty to get an optimal squad built from scratch (100 credits).
+#
+# Players: use the ID column from the fantasy export (e.g. 13369 = Carlik Jones).
+# Players whose ID is "-" in the export: use "Name Surname|TEAM", e.g. "Sergio Llull|RMB".
+# Coach: team code from the export, e.g. PAO.
+
+credits_in_bank: 0.0       # unspent credits shown in the game
+trades_available: 4        # 4 normally; write unlimited during unlimited windows
+
+players: []
+coach: ""
+
+lock: []                   # never sell these
+ban: []                    # never buy these

@@ -1,0 +1,9 @@
+# Manual fixes when automatic matching fails (the report lists unmatched players).
+
+# fantasy key -> EuroLeague API Player_ID (as shown in data/cache/players_index.csv)
+players: {}
+#  "13369": "P012345"
+
+# fantasy team code -> EuroLeague API club code (normally auto-detected)
+teams: {}
+#  PAO: PAN

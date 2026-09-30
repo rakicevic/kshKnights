@@ -1,0 +1,48 @@
+# KshKnights settings. Edit values here, not in code.
+
+competition: E            # E = EuroLeague
+season: 2026              # start year of current season (2026-27)
+prior_season: 2025        # used as a prior while current-season samples are small
+
+fantasy_file: data/fantasy/players_stats.xlsx
+
+# EuroLeague Fantasy Challenge (Classic mode) rules
+rules:
+  budget_start: 100.0     # budget when building a squad from scratch
+  # Round roster = 6 main (starting five in a formation + sixth man, 100%) + 4 bench (50%) + 1 coach
+  formations: ["1-2-2", "1-3-1", "2-1-2", "2-2-1", "3-1-1"]   # guards-forwards-centers of the starting five
+  sixth_man: 1             # any position
+  bench: {G: 1, F: 2, C: 1}
+  coach: 1
+  max_per_team: 6          # players (coach excluded) from one EuroLeague club
+  trades_per_round: 4      # coach trade counts toward the limit
+  bench_multiplier: 0.5
+  captain_multiplier: 2.0
+  win_bonus: 0.10          # +10% of player score when his team wins
+  coach_points:            # margin bands -> coach score
+    win_1_10: 10
+    win_11_20: 20
+    win_20_plus: 25
+    loss_1_10: -5
+    loss_11_20: -10
+    loss_20_plus: -20
+  # Mondays (YYYY-MM-DD) when the trade window is unlimited. Update from the official rules page.
+  unlimited_trade_windows: []
+
+model:
+  window_days: 7           # games counted as "next round": run date +1 .. +window_days
+  last_n: 4                # recent-form window
+  last_n_weights: [4, 3, 2, 1]   # most recent first
+  prior_games_k: 4         # shrinkage strength toward prior-season level
+  risk_aversion: 0.10      # projection -= risk_aversion * std(last 4 games)
+  home_court_pts: 2.5
+  margin_sigma: 12.0       # std dev of game margin, used for win probability
+  ml: true                 # gradient-boosted model; auto-falls back if it does not beat the baseline
+
+ai_news:
+  enabled: true            # needs ANTHROPIC_API_KEY secret; skipped silently without it
+  model: claude-sonnet-5-5
+  max_searches: 10
+  candidates: 30           # players checked for injury/availability news
+
+request_pause_seconds: 0.4 # politeness delay between EuroLeague API calls
