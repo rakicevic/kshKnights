@@ -1,0 +1,68 @@
+name: KshKnights weekly report
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"          # every Monday 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Run date YYYY-MM-DD (blank = today)"
+        required: false
+  push:
+    branches: [main]
+    paths:
+      - "data/fantasy/**"        # new fantasy export uploaded -> rerun
+      - "config/**"              # squad / settings changed -> rerun
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: kshknights-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Offline tests
+        run: pip install pytest && python -m pytest -q -W ignore
+
+      - name: Build report
+        id: run
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.date }}" ]; then ARGS="--date ${{ github.event.inputs.date }}"; fi
+          python -m kshknights $ARGS | tee run.log
+          echo "report=$(grep '^REPORT=' run.log | cut -d= -f2)" >> "$GITHUB_OUTPUT"
+
+      - name: Commit report, cache and price history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports data/cache data/history
+          git diff --cached --quiet || git commit -m "Weekly report $(date -u +%F)"
+          git pull --rebase --autostash
+          git push
+
+      - name: Open issue with the report (GitHub emails you)
+        if: github.event_name != 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create kshknights-report --color 0E8A16 2>/dev/null || true
+          gh issue create --title "Fantasy report $(date -u +%F)" \
+            --body-file "${{ steps.run.outputs.report }}" --label kshknights-report
