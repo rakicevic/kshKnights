@@ -9,7 +9,7 @@ P001133,"SHENGELIA, TORNIKE",DUB,2026,tornike shengelia,True
 P001255,"PAPANIKOLAOU, KOSTAS",OLY,2026,kostas papanikolaou,True
 P001288,"LUCIC, VLADIMIR",MUN,2026,vladimir lucic,True
 P001518,"RICCI, GIAMPAOLO",MIL,2026,giampaolo ricci,True
-P001557,"GIFFEY, NIELS",MUN,2025,niels giffey,False
+P001557,"GIFFEY, NIELS",MUN,2026,niels giffey,True
 P001844,"HACKETT, DANIEL",VIR,2026,daniel hackett,True
 P001926,"SLOUKAS, KOSTAS",PAN,2025,kostas sloukas,False
 P001932,"CALATHES, NICK",PAR,2025,nick calathes,False
@@ -45,6 +45,7 @@ P004088,"OSMAN, CEDI",PAN,2025,cedi osman,False
 P004093,"YILDIZLI, BURAKCAN",IST,2025,burakcan yildizli,False
 P004132,"THEIS, DANIEL",TEL,2026,daniel theis,True
 P004161,"SEGEV, ITAY",HTA,2025,itay segev,False
+P004194,"LAUVERGNE, JOFFREY",PAR,2026,joffrey lauvergne,True
 P004197,"OUATTARA, YAKUBA",PRS,2025,yakuba ouattara,False
 P004292,"TOLIOPOULOS, VASSILIS",PAN,2025,vassilis toliopoulos,False
 P004451,"KOUZELOGLOU, IOANNIS",PAN,2025,ioannis kouzeloglou,False
@@ -69,13 +70,14 @@ P005637,"TANASKOVIC, NIKOLA",PAR,2026,nikola tanaskovic,True
 P005670,"FLACCADORI, DIEGO",MIL,2026,diego flaccadori,True
 P005683,"RADANOV, ALEKSA",PAR,2025,aleksa radanov,False
 P005713,"KURUCS, RODIONS",BAS,2026,rodions kurucs,True
+P005763,"KORKMAZ, FURKAN",BES,2026,furkan korkmaz,True
 P005791,"TAVARES, WALTER",MAD,2026,walter tavares,True
 P005793,"SY, BANDJA",PAR,2026,bandja sy,True
 P005844,"PAPAGIANNIS, GEORGIOS",IST,2025,georgios papagiannis,False
 P005928,"CAMPAZZO, FACUNDO",MAD,2026,facundo campazzo,True
-P005942,"DANGUBIC, NEMANJA",DUB,2025,nemanja dangubic,False
+P005942,"DANGUBIC, NEMANJA",DUB,2026,nemanja dangubic,True
 P005985,"JAMES, MIKE",IST,2026,mike james,True
-P006020,"EBO, AMIT",TEL,2025,amit ebo,False
+P006020,"EBO, AMIT",TEL,2026,amit ebo,True
 P006085,"DIMITRIJEVIC, NENO",MUN,2025,neno dimitrijevic,False
 P006240,"PLAVSIC, UROS",RED,2025,uros plavsic,False
 P006277,"TOTE, LEONARDO",MIL,2025,leonardo tote,False
@@ -98,7 +100,7 @@ P006832,"PONS, YVES",ASV,2026,yves pons,True
 P006833,"SARR, OLIVIER",MAD,2026,olivier sarr,True
 P006835,"HOARD, JAYLEN",TEL,2026,jaylen hoard,True
 P006896,"SARGIUNAS, IGNAS",ULK,2026,ignas sargiunas,True
-P006904,"AYAYI, JOEL",PRS,2025,joel ayayi,False
+P006904,"AYAYI, JOEL",PRS,2026,joel ayayi,True
 P006961,"BIBEROVIC, TARIK",ULK,2025,tarik biberovic,False
 P007027,"MALEDON, THEO",MAD,2026,theo maledon,True
 P007029,"SIRVYDIS, DEIVIDAS",ZAL,2026,deividas sirvydis,True
@@ -147,7 +149,7 @@ P008829,"PETERS, ALEC",MIL,2026,alec peters,True
 P008855,"WALKUP, THOMAS",DUB,2026,thomas walkup,True
 P008858,"ENNIS, TYLER",HTA,2025,tyler ennis,False
 P008912,"CARRINGTON, KHADEEN",HTA,2026,khadeen carrington,True
-P008962,"HAYES-DAVIS, NIGEL",PAN,2025,nigel hayes davis,False
+P008962,"HAYES-DAVIS, NIGEL",PAN,2026,nigel hayes davis,True
 P008985,"BOLMARO, LEANDRO",MIL,2026,leandro bolmaro,True
 P008987,"LEDAY, ZACH",HTA,2026,zach leday,True
 P009005,"DECK, GABRIEL",MAD,2026,gabriel deck,True
@@ -253,7 +255,7 @@ P012403,"FAYE, MOUHAMED",PRS,2026,mouhamed faye,True
 P012515,"TARPEY, TERRY",PRS,2026,terry tarpey,True
 P012585,"MORGAN, MATTHEW",VIR,2025,matthew morgan,False
 P012593,"ELLIS, QUINN",MIL,2025,quinn ellis,False
-P012597,"BALDWIN, KAMAR",MUN,2025,kamar baldwin,False
+P012597,"BALDWIN, KAMAR",MUN,2026,kamar baldwin,True
 P012606,"WRIGHT IV, MCKINLEY",DUB,2026,mckinley wright iv,True
 P012608,"SHORTS, TJ",PAM,2026,tj shorts,True
 P012609,"MALCOLM, COLLIN",IST,2026,collin malcolm,True
@@ -295,7 +297,7 @@ P013278,"WILEY, AUSTIN",MUN,2026,austin wiley,True
 P013283,"PALATIN, GUY",HTA,2025,guy palatin,False
 P013284,"WAINRIGHT, ISH",HTA,2026,ish wainright,True
 P013285,"DOTSON, DEVON",BES,2026,devon dotson,True
-P013289,"SANTOS, MARCIO",TEL,2025,marcio santos,False
+P013289,"SANTOS, MARCIO",BAS,2026,marcio santos,True
 P013290,"JESSUP, JUSTINIAN",MUN,2026,justinian jessup,True
 P013304,"HANKINS, ZACHARY",TEL,2025,zachary hankins,False
 P013363,"NWORA, JORDAN",RED,2026,jordan nwora,True
@@ -334,7 +336,7 @@ P014008,"ROBINSON, JUSTIN",BAR,2026,justin robinson,True
 P014009,"STEVENS, LAMAR",PAR,2026,lamar stevens,True
 P014010,"DOKOSSI, ALLAN",PRS,2026,allan dokossi,True
 P014011,"HOLMES, RICHAUN",PAN,2025,richaun holmes,False
-P014012,"LEAF, TJ",TEL,2025,tj leaf,False
+P014012,"LEAF, TJ",TEL,2026,tj leaf,True
 P014013,"WATSON, GLYNN",ASV,2025,glynn watson,False
 P014014,"VAUTIER, BASTIEN",ASV,2025,bastien vautier,False
 P014015,"BACOT JR., ARMANDO",TEL,2026,armando bacot jr,True
