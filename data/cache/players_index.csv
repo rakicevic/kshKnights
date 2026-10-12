@@ -127,7 +127,7 @@ P007853,"MCKISSIC, SHAQUIELLE",OLY,2025,shaquielle mckissic,False
 P007866,"MITOGLOU, KONSTANTINOS",PAN,2026,konstantinos mitoglou,True
 P007929,"BITIM, ONURALP",ULK,2026,onuralp bitim,True
 P007947,"VILDOZA, LUCA",PAR,2026,luca vildoza,True
-P007960,"DAVIDOVAC, DEJAN",RED,2025,dejan davidovac,False
+P007960,"DAVIDOVAC, DEJAN",RED,2026,dejan davidovac,True
 P007975,"FRANCISCO, SYLVAIN",PAN,2026,sylvain francisco,True
 P007982,"WILLIAMS-GOSS, NIGEL",ZAL,2026,nigel williams goss,True
 P007990,"DIBARTOLOMEO, JOHN",TEL,2026,john dibartolomeo,True
@@ -144,7 +144,7 @@ P008192,"TUBELIS, AZUOLAS",ZAL,2026,azuolas tubelis,True
 P008232,"POKUSEVSKI, ALEKSEJ",PAR,2025,aleksej pokusevski,False
 P008325,"KAMENJAS, KENAN",DUB,2025,kenan kamenjas,False
 P008384,"PROCIDA, GABRIELE",MAD,2026,gabriele procida,True
-P008811,"FALL, MOUSTAPHA",OLY,2025,moustapha fall,False
+P008811,"FALL, MOUSTAPHA",PAN,2026,moustapha fall,True
 P008829,"PETERS, ALEC",MIL,2026,alec peters,True
 P008855,"WALKUP, THOMAS",DUB,2026,thomas walkup,True
 P008858,"ENNIS, TYLER",HTA,2025,tyler ennis,False
@@ -208,7 +208,7 @@ P011157,"MOTLEY, JOHNATHAN",RED,2026,johnathan motley,True
 P011193,"BLATT, TAMIR",TEL,2025,tamir blatt,False
 P011194,"PETRUSEV, FILIP",DUB,2026,filip petrusev,True
 P011196,"HALL, DONTA",OLY,2026,donta hall,True
-P011199,"NEBO, JOSH",MIL,2025,josh nebo,False
+P011199,"NEBO, JOSH",BAR,2026,josh nebo,True
 P011201,"HAZER, SEHMUS",IST,2025,sehmus hazer,False
 P011204,"GRANT, JERIAN",PAN,2026,jerian grant,True
 P011205,"HALL, DEVON",MIL,2026,devon hall,True
@@ -232,6 +232,7 @@ P011706,"SAINT-SUPERY, MARIO",PAM,2026,mario saint supery,True
 P011816,"AKELE, NICOLA",VIR,2025,nicola akele,False
 P011823,"ODIASE, TAI",HTA,2026,tai odiase,True
 P011836,"MIKE, ISIAHA",MUN,2025,isiaha mike,False
+P011837,"KOKILA, KEVIN",VIR,2026,kevin kokila,True
 P011924,"ALLMAN, KYLE",PAR,2026,kyle allman,True
 P011927,"SLEVA, DUSTIN",ZAL,2026,dustin sleva,True
 P011935,"MAKOUNDOU, YOAN",MCO,2025,yoan makoundou,False
@@ -313,9 +314,9 @@ P013381,"RAYMAN, WILLIAM",TEL,2026,william rayman,True
 P013382,"RANDOLPH, LEVI",HTA,2025,levi randolph,False
 P013383,"GABRIEL, WENYEN",BES,2026,wenyen gabriel,True
 P013384,"BROOKS, ARMONI",PAM,2026,armoni brooks,True
-P013385,"DIOP, OUSMANE",MIL,2025,ousmane diop,False
+P013385,"DIOP, OUSMANE",MIL,2026,ousmane diop,True
 P013386,"MCCORMACK, DAVID",MUN,2025,david mccormack,False
-P013389,"LEE, SABEN",IST,2025,saben lee,False
+P013389,"LEE, SABEN",ZAL,2026,saben lee,True
 P013402,"BLAKENEY, ANTONIO",HTA,2026,antonio blakeney,True
 P013403,"WALKER IV, LONNIE",TEL,2025,lonnie walker iv,False
 P013422,"FENEMEN, RUZGAR",IST,2025,ruzgar fenemen,False
@@ -380,11 +381,12 @@ P014190,"RADZEVICIUS, GYTIS",BAS,2025,gytis radzevicius,False
 P014207,"OMORUYI, EUGENE",BES,2026,eugene omoruyi,True
 P014209,"VOGOGNA, JACOPO",MIL,2025,jacopo vogogna,False
 P014212,"MORRIS, MONTE",OLY,2025,monte morris,False
-P014213,"PAYNE, CAMERON",PAR,2025,cameron payne,False
+P014213,"PAYNE, CAMERON",IST,2026,cameron payne,True
 P014219,"FERRARI, FRANCESCO",VIR,2026,francesco ferrari,True
 P014220,"SILVA, CHRIS",ULK,2026,chris silva,True
 P014316,"JOSEPH, CORY",OLY,2026,cory joseph,True
 P014416,"EDWARDS, KESSLER",VIR,2026,kessler edwards,True
+P014728,"BALDWIN, PATRICK",RED,2026,patrick baldwin,True
 P014731,"MINTZ, DAVION",DUB,2026,davion mintz,True
 P014732,"BEAUCHAMP, MARJON",MUN,2026,marjon beauchamp,True
 P014733,"JUZANG, JOHNNY",ULK,2026,johnny juzang,True
@@ -407,6 +409,7 @@ P015103,"JONES, DAMIAN",MAD,2026,damian jones,True
 P015138,"MARTIN, TYRESE",BAR,2026,tyrese martin,True
 P015139,"UMUDE, STANLEY",BAR,2026,stanley umude,True
 P015140,"NKAMHOUA, OLIVIER",BAR,2026,olivier nkamhoua,True
+P015141,"EVBUOMWAN, TOSAN",BAR,2026,tosan evbuomwan,True
 P015142,"MINAYA, JUSTIN",BAR,2026,justin minaya,True
 P015143,"ETIENNE, TYSON",PRS,2026,tyson etienne,True
 P015151,"TOPPIN, JACOB",HTA,2026,jacob toppin,True
