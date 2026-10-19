@@ -1,5 +1,5 @@
 Player_ID,Player,Team,LastSeason,norm,current
-P000229,"JACKSON, EDWIN",ASV,2025,edwin jackson,False
+P000229,"JACKSON, EDWIN",ASV,2026,edwin jackson,True
 P000796,"MIROTIC, NIKOLA",PAM,2026,nikola mirotic,True
 P000848,"NEDOVIC, NEMANJA",MCO,2025,nemanja nedovic,False
 P000898,"VALANCIUNAS, JONAS",ZAL,2026,jonas valanciunas,True
@@ -108,7 +108,7 @@ P007032,"LO, MAODO",ZAL,2026,maodo lo,True
 P007056,"BOOKER, DEVIN",MIL,2026,devin booker,True
 P007109,"SMITS, ROLANDS",IST,2025,rolands smits,False
 P007182,"BIRCH, KHEM",ULK,2025,khem birch,False
-P007200,"LARKIN, SHANE",IST,2025,shane larkin,False
+P007200,"LARKIN, SHANE",ULK,2026,shane larkin,True
 P007201,"VOIGTMANN, JOHANNES",MUN,2026,johannes voigtmann,True
 P007230,"SEDEKERSKIS, TADAS",BAS,2026,tadas sedekerskis,True
 P007464,"PARRA, JOEL",BAR,2026,joel parra,True
@@ -157,6 +157,7 @@ P009025,"BROWN, ANTHONY",BES,2026,anthony brown,True
 P009035,"BOLOMBOY, JOEL",ASV,2026,joel bolomboy,True
 P009048,"MILLER-MCINTYRE, CODI",OLY,2026,codi miller mcintyre,True
 P009299,"RUBSTAVICIUS, MANTAS",ZAL,2025,mantas rubstavicius,False
+P009400,"CASARIN, DAVIDE",VIR,2026,davide casarin,True
 P009513,"HOLLATZ, JUSTUS",MUN,2026,justus hollatz,True
 P009549,"CORDINIER, ISAIA",IST,2025,isaia cordinier,False
 P009556,"NGOUAMA, MEHDY",ASV,2025,mehdy ngouama,False
@@ -180,6 +181,7 @@ P010091,"PLOTAS, NIKOLAOS",OLY,2026,nikolaos plotas,True
 P010105,"ALMANSA, IZAN",MAD,2025,izan almansa,False
 P010106,"NUNEZ, JUAN",BAR,2026,juan nunez,True
 P010162,"NOGUES, ISAAC",PAM,2025,isaac nogues,False
+P010262,"DJURISIC, NIKOLA",RED,2026,nikola djurisic,True
 P010316,"AJINCA, MELVIN",ASV,2025,melvin ajinca,False
 P010318,"DESSERT, BRICE",IST,2025,brice dessert,False
 P010319,"TRAORE, ARMEL",ASV,2025,armel traore,False
@@ -361,7 +363,7 @@ P014117,"LYLES, TREY",MAD,2025,trey lyles,False
 P014119,"NOWELL, MARKQUIS",BAS,2025,markquis nowell,False
 P014120,"LAVI, GUR",TEL,2025,gur lavi,False
 P014121,"OMORUYI, CLIFFORD",TEL,2025,clifford omoruyi,False
-P014122,"NETZIPOGLOU, OMIROS",OLY,2025,omiros netzipoglou,False
+P014122,"NETZIPOGLOU, OMIROS",OLY,2026,omiros netzipoglou,True
 P014123,"DOWTIN JR, JEFFREY",TEL,2025,jeffrey dowtin jr,False
 P014124,"HORTON TUCKER, TALEN",ULK,2026,talen horton tucker,True
 P014127,"BRISSETT, O'SHAE J",TEL,2026,oshae j brissett,True
@@ -386,6 +388,7 @@ P014219,"FERRARI, FRANCESCO",VIR,2026,francesco ferrari,True
 P014220,"SILVA, CHRIS",ULK,2026,chris silva,True
 P014316,"JOSEPH, CORY",OLY,2026,cory joseph,True
 P014416,"EDWARDS, KESSLER",VIR,2026,kessler edwards,True
+P014597,"SANZ, LORENZ",ASV,2026,lorenz sanz,True
 P014728,"BALDWIN, PATRICK",RED,2026,patrick baldwin,True
 P014731,"MINTZ, DAVION",DUB,2026,davion mintz,True
 P014732,"BEAUCHAMP, MARJON",MUN,2026,marjon beauchamp,True
@@ -402,6 +405,7 @@ P014782,"BURNELL, JASON",MIL,2026,jason burnell,True
 P014783,"MATHEWS, GARRISON",MIL,2026,garrison mathews,True
 P014785,"JEFFRIES, DAQUAN",BES,2026,daquan jeffries,True
 P014786,"NOWELL, JAYLEN",BES,2026,jaylen nowell,True
+P014801,"PEREIRA, MAOZINHA",PRS,2026,maozinha pereira,True
 P014802,"BELLO, RASHEED",VIR,2026,rasheed bello,True
 P015029,"FRAZIER, TRENT",VIR,2026,trent frazier,True
 P015085,"WALLACE, KEATON",TEL,2026,keaton wallace,True
@@ -414,8 +418,10 @@ P015142,"MINAYA, JUSTIN",BAR,2026,justin minaya,True
 P015143,"ETIENNE, TYSON",PRS,2026,tyson etienne,True
 P015151,"TOPPIN, JACOB",HTA,2026,jacob toppin,True
 P015152,"GERMAN, EUGENE",HTA,2026,eugene german,True
+P015153,"COFFEY, AMIR",HTA,2026,amir coffey,True
 P015160,"JOHNSON, ALIZE",PRS,2026,alize johnson,True
 P015161,"FODZO DADA, MARC-OWEN",ASV,2026,marc owen fodzo dada,True
+P015162,"WASHINGTON JR, TYTY",ASV,2026,tyty washington jr,True
 P015163,"MILLS, PATTY",ASV,2026,patty mills,True
 P015164,"BESSON, HUGO",ASV,2026,hugo besson,True
 P015165,"WATERS, TREMONT",ASV,2026,tremont waters,True
